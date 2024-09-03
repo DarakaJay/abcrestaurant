@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Rates and Availability - ABC Restaurant</title>
+    <link rel="stylesheet" href="rates.css">
+</head>
+
+<body>
+     <header>
+        <h1>ABC Restaurant</h1>
+        <div class="logo">
+            <img src="logo.png" alt="ABC Restaurant Logo" height="100px" width="140px">
+        </div><br><br>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menu.html">Products and Services</a></li> 
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="search1.html">Search Facilities</a></li>
+                <li><a href="rates.html">Check Availability</a></li>
+                <li><a href="Query.html">Submit Queries</a></li>
+                <li><a href="payment.html">Make Payment</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="customerreg.html">Register</a></li>
+                <li><a href="stafflogin.html">Staff/Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="check-rates">
+        <h2>Check Availability</h2>
+        <form id="rates-form">
+            <label for="service">Service Type:</label>
+            <select id="service" name="service">
+                <option value="dine-in">Dine-In</option>
+                <option value="delivery">Delivery</option>
+                <option value="catering">Catering</option>
+            </select>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" required min="1">
+
+            <button type="submit">Check Availability</button>
+            <button type="button" id="cancel">Cancel</button>
+        </form>
+
+        <div id="availability-result" class="hidden">
+            <!-- Availability results will be displayed here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ABC Restaurant. All rights reserved.</p>
+    </footer>
+
+    <script src="rates.js"></script>
+</body>
+
+</html>

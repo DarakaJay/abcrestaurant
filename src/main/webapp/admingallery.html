@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant - Manage Gallery</title>
+    <link rel="stylesheet" href="admingallery.css">
+</head>
+
+<body>
+    <header>
+        <h1>ABC Restaurant - Manage Gallery</h1>
+        <div class="logo">
+            <img src="logo.png" alt="ABC Restaurant Logo">
+        </div>
+        <nav>
+        <ul>
+            <li><a href="admindash.html">Manage Reservations</a></li>
+            <li><a href="respondtoquery.html">Respond to Queries</a></li>
+            <li><a href="managepayment.html">Manage Payments</a></li>
+            <li><a href="admingallery.html">Manage Gallery</a></li>
+            <li><a href="reports.html">Generate Reports</a></li>
+            <li><a href="staffregadmin.html">Staff Registration</a></li>
+            <li><a href="home.html">Logout</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <section id="gallery-management">
+        <h2>Manage Gallery</h2>
+        <div class="button-group">
+            <button id="add-image-btn">Add Image</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Example gallery items; these should be dynamically generated from the database -->
+            <div class="gallery-item">
+                <img src="interior.jpg" alt="Restaurant Interior">
+                <button class="update-image-btn">Update</button>
+                <button class="delete-image-btn">Delete</button>
+            </div>
+            <!-- Add more gallery items dynamically -->
+        </div>
+    </section>
+
+    <!-- Modal for adding/updating images -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <form id="image-form">
+                <input type="file" id="image-file" accept="image/*">
+                <input type="text" id="image-description" placeholder="Enter description">
+                <button type="submit" id="submit-image-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admingallery.js"></script>
+</body>
+
+</html>

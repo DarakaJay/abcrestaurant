@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Payment - ABC Restaurant</title>
+    <link rel="stylesheet" href="managementpayment.css">
+</head>
+<body>
+    <header>
+        <h1>ABC Restaurant</h1>
+        <div class="logo">
+            <img src="logo.png" alt="ABC Restaurant Logo" height="100px" width="140px">
+        </div>
+        <br><br>
+    <nav>
+        <ul>
+            <li><a href="admindash.html">Manage Reservations</a></li>
+            <li><a href="respondtoquery.html">Respond to Queries</a></li>
+            <li><a href="managepayment.html">Manage Payments</a></li>
+            <li><a href="admingallery.html">Manage Gallery</a></li>
+            <li><a href="reports.html">Generate Reports</a></li>
+            <li><a href="staffregadmin.html">Staff Registration</a></li>
+            <li><a href="home.html">Logout</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <!-- Manage Payment Section -->
+        <section id="manage-payment">
+            <h2>Manage Payment</h2>
+            <form id="payment-form">
+                <label for="payment-id">Payment ID</label>
+                <input type="text" id="payment-id" name="payment-id" placeholder="Enter Payment ID" required>
+                
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
+                
+                <label for="payment-status">Payment Status</label>
+                <select id="payment-status" name="payment-status" required>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    <option value="failed">Failed</option>
+                </select>
+
+                <button type="submit">Update Payment</button><br>
+                <button type="button" id="cancel-button">Cancel</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="managepayment.js"></script>
+</body>
+</html>

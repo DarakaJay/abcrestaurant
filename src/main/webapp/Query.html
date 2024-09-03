@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Query - ABC Restaurant</title>
+    <link rel="stylesheet" href="query.css">
+    <link rel="stylesheet" href="login1.css">
+</head>
+<body>
+
+    <header>
+        <h1>ABC Restaurant</h1>
+        <div class="logo">
+            <img src="logo.png" alt="ABC Restaurant Logo" height="100px" width="140px">
+        </div><br><br>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menu.html">Products and Services</a></li> 
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="search1.html">Search Facilities</a></li>
+                <li><a href="rates.html">Check Availability</a></li>
+                <li><a href="Query.html">Submit Queries</a></li>
+                <li><a href="payment.html">Make Payment</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="customerreg.html">Register</a></li>
+                <li><a href="stafflogin.html">Staff/Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Submit Query Section -->
+        <section id="query">
+            <h2>Submit a Query</h2>
+            <form id="query-form" method="post" action="submitQuery">
+                <label for="customerName">Name</label>
+                <input type="text" id="customerName" name="customerName" placeholder="Your name" required>
+                
+                <label for="query-email">Email</label>
+                <input type="email" id="query-email" name="email" placeholder="Your email address" required>
+                
+                <label for="queryContent">Message</label>
+                <textarea id="queryContent" name="queryContent" placeholder="Your query" required></textarea>
+                
+                <!-- Hidden input for query date -->
+                <input type="hidden" id="queryDate" name="queryDate">
+                
+                <button type="submit">Submit Query</button>
+                <button type="button" onclick="window.location.href='home.html'">Cancel</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript to set the current date as query date
+        document.getElementById('query-form').addEventListener('submit', function() {
+            const queryDate = new Date().toISOString().slice(0, 19).replace('T', ' '); // Format: YYYY-MM-DD HH:MM:SS
+            document.getElementById('queryDate').value = queryDate;
+        });
+    </script>
+
+</body>
+</html>

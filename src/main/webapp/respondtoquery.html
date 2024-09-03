@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respond to Queries</title>
+    <link rel="stylesheet" href="respondtoquery.css">
+</head>
+<body>
+    <header>
+        <h1>ABC Restaurant Admin Dashboard</h1>
+        <h2>Respond to Queries</h2>
+    </header>
+
+        <nav>
+        <ul>
+            <li><a href="admindash.html">Manage Reservations</a></li>
+            <li><a href="respondtoquery.html">Respond to Queries</a></li>
+            <li><a href="managepayment.html">Manage Payments</a></li>
+            <li><a href="admingallery.html">Manage Gallery</a></li>
+            <li><a href="reports.html">Generate Reports</a></li>
+            <li><a href="staffregadmin.html">Staff Registration</a></li>
+            <li><a href="home.html">Logout</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="respond-queries">
+            <h2>Respond to Queries</h2>
+            <form id="query-form">
+                <label for="query-id">Query ID:</label>
+                <input type="text" id="query-id" name="query-id" placeholder="Enter Query ID" required>
+                
+                <label for="customer-name">Customer Name:</label>
+                <input type="text" id="customer-name" name="customer-name" placeholder="Enter Customer Name" required>
+                
+                <label for="query-response">Response:</label>
+                <textarea id="query-response" name="query-response" placeholder="Type your response here" required></textarea>
+                
+                <button type="submit">Send Response</button>
+                <button type="button" onclick="window.location.href='menu.html'">Cancel</button>
+            </form>
+        </section>
+    </main>
+    
+    <script src="respondtoquery.js"></script>
+</body>
+</html>

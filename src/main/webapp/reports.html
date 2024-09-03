@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant - Sales Reports</title>
+    <link rel="stylesheet" href="reports.css">
+</head>
+
+<body>
+    <header>
+        <h1>ABC Restaurant</h1>
+        <h2>Sales Reports</h2>
+    <nav>
+        <ul>
+            <li><a href="admindash.html">Manage Reservations</a></li>
+            <li><a href="respondtoquery.html">Respond to Queries</a></li>
+            <li><a href="managepayment.html">Manage Payments</a></li>
+            <li><a href="admingallery.html">Manage Gallery</a></li>
+            <li><a href="reports.html">Generate Reports</a></li>
+            <li><a href="staffregadmin.html">Staff Registration</a></li>
+            <li><a href="home.html">Logout</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <section id="daily-sales">
+            <h2>Daily Sales Report</h2>
+            <button onclick="addRow('daily-sales-table')">Add Record</button><br><br>
+            <table id="daily-sales-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Item Sold</th>
+                        <th>Quantity</th>
+                        <th>Total Sales</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example row -->
+                    <tr>
+                        <td>2024-08-21</td>
+                        <td>Burger</td>
+                        <td>50</td>
+                        <td>12000</td>
+                        <td>
+                            <button onclick="editRow(this)">Edit</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="monthly-sales">
+            <h2>Monthly Sales Report</h2>
+            <button onclick="addRow('monthly-sales-table')">Add Record</button><br><br>
+            <table id="monthly-sales-table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Total Sales</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example row -->
+                    <tr>
+                        <td>August 2024</td>
+                        <td>$15,000</td>
+                        <td>
+                            <button onclick="editRow(this)">Edit</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="reports.js"></script>
+</body>
+
+</html>

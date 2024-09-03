@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ABC Restaurant</title>
+    <link rel="stylesheet" href="admindash.css">
+</head>
+<body>
+    <header>
+        <h1>ABC Restaurant Admin Dashboard</h1>
+        <h2>Manage Operations and Generate Reports</h2>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="admindash.html">Manage Reservations</a></li>
+            <li><a href="respondtoquery.html">Respond to Queries</a></li>
+            <li><a href="managepayment.html">Manage Payments</a></li>
+            <li><a href="admingallery.html">Manage Gallery</a></li>
+            <li><a href="reports.html">Generate Reports</a></li>
+            <li><a href="staffregadmin.html">Staff Registration</a></li>
+            <li><a href="home.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="manage-reservations">
+            <h2>Manage Reservations</h2>
+            <table id="reservations-table">
+                <thead>
+                    <tr>
+                        <th>Reservation ID</th>
+                        <th>Customer Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows will be added here -->
+                </tbody>
+            </table>
+            <button onclick="addRow('reservations-table')">Add Reservation</button>
+        </section>
+
+
+    </main>
+
+
+    <script src="admindash.js"></script>
+</body>
+</html>

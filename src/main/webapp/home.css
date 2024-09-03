@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    width: 150px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Overview Section */
+#overview {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#overview h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.overview-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.overview-content .overview-image {
+    max-width: 45%;
+    border-radius: 8px;
+}
+
+.overview-text {
+    max-width: 50%;
+    text-align: justify-all;
+    text-align: center;
+}
+
+.overview-text p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Product and Services Section */
+#product-services {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#product-services h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #fff;
+    color: #555;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-button.active {
+    background-color: #555;
+}
+
+.tab-button:hover {
+    background-color: #333;
+}
+
+.tab-content .tab-panel {
+    display: none;
+}
+
+.tab-content .tab-panel.active {
+    display: block;
+}
+
+.tab-panel ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tab-panel ul li {
+    padding: 5px 0;
+}
+
+/* Offers Section */
+#offers {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#offers h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#offers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#load-offers {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#load-offers:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
