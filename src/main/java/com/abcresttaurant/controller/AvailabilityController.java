@@ -2,6 +2,7 @@ package com.abcresttaurant.controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +36,6 @@ public class AvailabilityController extends HttpServlet {
 
         boolean isAvailable = availabilityService.checkAvailability(availability);
         request.setAttribute("availability", isAvailable);
-        request.getRequestDispatcher("WEB-INF/view/availabilityResult.jsp").forward(request, response);
+        request.getRequestDispatcher("/rates.js").forward(request, response);
     }
 }

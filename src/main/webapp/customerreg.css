@@ -1,4 +1,3 @@
-/* styles.css */
 
 body {
     font-family: Arial, sans-serif;
@@ -52,7 +51,6 @@ form button:hover {
        background: linear-gradient(to right, #DCE35B, #45B649);
 }
 
-/* Popup Message Styling */
 .popup {
     display: none;
     position: fixed;

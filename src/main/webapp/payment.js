@@ -16,21 +16,59 @@ function toggleCardDetails() {
 document.getElementById('payment-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Collect payment details
-    var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-    var reservationId = document.getElementById('reservation-id').value;
-    var paymentDate = document.getElementById('payment-date').value;
-    var amount = document.getElementById('amount').value;
+    // Display popup message
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
 
-    // Display the collected information
-    alert('Payment Confirmed!\n\n' +
-          'Payment Method: ' + paymentMethod + '\n' +
-          'Reservation ID: ' + reservationId + '\n' +
-          'Payment Date: ' + paymentDate + '\n' +
-          'Amount: ' + amount);
+    // Hide the popup after 3 seconds
+    setTimeout(function() {
+        popup.style.display = 'none';
+    }, 3000);
 
-    // Further logic for handling payment processing can be added here
+    // Send the form data to the servlet
+    sendPaymentPostRequest();
 });
+
+function sendPaymentPostRequest() {
+    const url = '/abc_restaurant_v2/payment'; // Ensure this URL matches your servlet's mapping
+
+    // Collect payment details
+    const formData = new URLSearchParams();
+    formData.append('paymentMethod', document.querySelector('input[name="paymentMethod"]:checked').value);
+    formData.append('reservationId', document.getElementById('reservation-id').value);
+    formData.append('paymentDate', document.getElementById('payment-date').value);
+    formData.append('amount', document.getElementById('amount').value);
+
+    if (document.querySelector('input[name="paymentMethod"]:checked').value === 'Online Payment') {
+        formData.append('cardNumber', document.getElementById('card-number').value);
+        formData.append('cardExpiry', document.getElementById('card-expiry').value);
+        formData.append('cardCVV', document.getElementById('card-cvv').value);
+    }
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded', // Sending data as form URL encoded
+        },
+        body: formData.toString(), // Convert form data to URL-encoded string
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // Assuming the servlet returns a JSON response
+    })
+    .then(result => {
+        console.log('Success:', result);
+        // Handle the success response (e.g., display a message or redirect)
+        alert('Payment Successful!');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Handle the error
+        alert('Payment Failed!');
+    });
+}
 
 // Handle payment cancellation
 function cancelPayment() {

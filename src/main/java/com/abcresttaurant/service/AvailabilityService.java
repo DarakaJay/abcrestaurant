@@ -1,6 +1,7 @@
 package com.abcresttaurant.service;
 
 import com.abcresttaurant.dao.AvailabilityDAO;
+
 import com.abcresttaurant.model.Availability;
 
 public class AvailabilityService {
