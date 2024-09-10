@@ -1,4 +1,4 @@
-/* Basic styling for gallery management */
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
@@ -136,7 +136,7 @@ button:hover {
     right: 5%;
 }
 
-/* Modal styling */
+
 .modal {
     display: none;
     position: fixed;

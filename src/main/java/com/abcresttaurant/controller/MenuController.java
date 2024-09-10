@@ -1,16 +1,13 @@
 package com.abcresttaurant.controller;
 
 import java.io.IOException;
-
 import java.sql.SQLException;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.abcresttaurant.model.MenuItem;
 import com.abcresttaurant.service.MenuService;
 
@@ -50,15 +47,15 @@ public class MenuController extends HttpServlet {
         try {
             List<MenuItem> menuItems = menuService.getAllMenuItems();
             request.setAttribute("menuItems", menuItems);
-            request.getRequestDispatcher("WEB-INF/view/listMenuItems.jsp").forward(request, response);
+            request.getRequestDispatcher("/menu.js").forward(request, response);
         } catch (SQLException e) {
             request.setAttribute("errorMessage", e.getMessage());
-            request.getRequestDispatcher("WEB-INF/view/error.jsp").forward(request, response);
+            request.getRequestDispatcher("/error.js").forward(request, response);
         }
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/view/addMenuItem.jsp").forward(request, response);
+        request.getRequestDispatcher("/menu.js").forward(request, response);
     }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -66,10 +63,10 @@ public class MenuController extends HttpServlet {
         try {
             MenuItem existingMenuItem = menuService.getMenuItemById(id);
             request.setAttribute("menuItem", existingMenuItem);
-            request.getRequestDispatcher("WEB-INF/view/editMenuItem.jsp").forward(request, response);
+            request.getRequestDispatcher("/menu.js").forward(request, response);
         } catch (SQLException e) {
             request.setAttribute("errorMessage", e.getMessage());
-            request.getRequestDispatcher("WEB-INF/view/error.jsp").forward(request, response);
+            request.getRequestDispatcher("/error.js").forward(request, response);
         }
     }
 
@@ -103,12 +100,7 @@ public class MenuController extends HttpServlet {
 
     private void deleteMenuItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        try {
-            menuService.deleteMenuItem(id);
-            response.sendRedirect("menu?action=list");
-        } catch (SQLException e) {
-            request.setAttribute("errorMessage", e.getMessage());
-            request.getRequestDispatcher("WEB-INF/view/error.jsp").forward(request, response);
-        }
+        menuService.deleteMenuItem(id);
+		response.sendRedirect("menu?action=list");
     }
 }

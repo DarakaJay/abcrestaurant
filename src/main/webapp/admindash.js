@@ -1,4 +1,4 @@
-// Add a new row to the table
+
 function addRow(tableId) {
     const table = document.getElementById(tableId).getElementsByTagName('tbody')[0];
     const newRow = table.insertRow();
@@ -16,7 +16,7 @@ function addRow(tableId) {
     }
 }
 
-// Save the data from the input fields to the table cells
+
 function saveRow(button) {
     const row = button.parentNode.parentNode;
     const inputs = row.querySelectorAll('input');
@@ -33,7 +33,7 @@ function saveRow(button) {
         <button onclick="deleteRow(this)">Delete</button>`;
 }
 
-// Edit an existing row
+
 function editRow(button) {
     const row = button.parentNode.parentNode;
     const cells = row.getElementsByTagName('td');
@@ -48,17 +48,17 @@ function editRow(button) {
                             <button onclick="deleteRow(this)">Delete</button>`;
 }
 
-// Delete a row from the table
+
 function deleteRow(button) {
     const row = button.parentNode.parentNode;
     row.parentNode.removeChild(row);
 }
 
-// Redirect to Reports HTML form
+
 function generateDailySales() {
     window.location.href = "reports.html";
 }
 
 function generateMonthlySales() {
-    // Additional code for generating monthly sales reports
+
 }

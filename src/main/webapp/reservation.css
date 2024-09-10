@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -45,7 +45,6 @@ nav ul li a:hover {
     color: #fff;
 }
 
-/* Reservation Form */
 #reservation-form {
     padding: 20px;
     max-width: 600px;
@@ -106,7 +105,6 @@ nav ul li a:hover {
        background: linear-gradient(to right, #DCE35B, #45B649);
 }
 
-/* Popup Message */
 .popup {
     display: none;
     position: fixed;

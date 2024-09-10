@@ -1,4 +1,4 @@
-// facilities.js
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const facilityItems = document.querySelectorAll('.facility-item');

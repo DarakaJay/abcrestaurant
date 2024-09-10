@@ -1,7 +1,7 @@
 package com.abcresttaurant.controller;
 
-
 import java.io.IOException;
+
 import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.abcresttaurant.model.Customer;
 import com.abcresttaurant.service.CustomerService;
 
-
-	
-
-	@WebServlet("/register")
+	@WebServlet("/customerreg")
 	public class CustomerController extends HttpServlet {
 	    private static final long serialVersionUID = 1L;
 
@@ -25,7 +22,7 @@ import com.abcresttaurant.service.CustomerService;
 	    }
 
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	        request.getRequestDispatcher("/register.js").forward(request, response);
+	        request.getRequestDispatcher("/customerreg.js").forward(request, response);
 	    }
 
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

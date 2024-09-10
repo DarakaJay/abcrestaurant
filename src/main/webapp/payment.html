@@ -33,7 +33,6 @@
         <div class="payment-options">
             <h2>Select Payment Method</h2>
             <form id="payment-form" action="submitPayment" method="post">
-                <!-- Payment Method Selection -->
                 <div class="payment-method">
                     <label>
                         <input type="radio" name="paymentMethod" value="Online Payment" required>
@@ -49,7 +48,6 @@
                     <p>Pay with cash when you arrive at the restaurant.</p>
                 </div>
 
-                <!-- Card Details Section -->
                 <div id="card-details" class="card-details">
                     <h3>Enter Card Details</h3>
                     <label for="card-number">Card Number:</label>
@@ -62,7 +60,6 @@
                     <input type="text" id="card-cvc" name="cardCVC" pattern="\d{3}" placeholder="123">
                 </div>
 
-                <!-- New Payment Details Section -->
                 <div class="payment-details">
                     <label for="reservation-id">Reservation ID:</label>
                     <input type="number" id="reservation-id" name="reservationId" required>

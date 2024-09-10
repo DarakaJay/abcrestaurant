@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -46,7 +46,7 @@ nav ul li a:hover {
     color: #fff;
 }
 
-/* Main Content */
+
 .container {
     padding: 20px;
 }
@@ -133,7 +133,7 @@ nav ul li a:hover {
     background: linear-gradient(to right, #DCE35B, #45B649);
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 28px;

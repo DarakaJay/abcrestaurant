@@ -1,9 +1,7 @@
 package com.abcresttaurant.service;
 
 import java.sql.SQLException;
-
 import java.util.List;
-
 import com.abcresttaurant.dao.MenuDAO;
 import com.abcresttaurant.model.MenuItem;
 

@@ -4,33 +4,27 @@ document.addEventListener("DOMContentLoaded", function() {
     const closePopupButton = document.getElementById("close-popup");
     const cancelButton = document.getElementById("cancel");
 
-    // Handle reservation form submission
     reservationForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevents the default form submission
+        event.preventDefault();
 
-        // Display the popup message
-        popup.style.display = "flex"; // Shows the popup
+        popup.style.display = "flex";
 
-        // Send the reservation form data to the servlet
         sendReservationPostRequest();
     });
 
-    // Close the popup and reset the form
     closePopupButton.addEventListener("click", function() {
-        popup.style.display = "none"; // Hides the popup
-        reservationForm.reset(); // Resets the form fields
+        popup.style.display = "none";
+        reservationForm.reset();
     });
 
-    // Handle reservation cancellation
     cancelButton.addEventListener("click", function() {
-        window.location.href = "home.html"; // Redirects to the home page
+        window.location.href = "home.html";
     });
 });
 
 function sendReservationPostRequest() {
-    const url = '/abc_restaurant_v2/reserve'; // Ensure this URL matches your servlet's mapping
+    const url = '/abc_restaurant_v2/reserve';
 
-    // Collect reservation form data
     const formData = new URLSearchParams();
     formData.append('customerName', document.getElementById('customerName').value);
     formData.append('reservationDate', document.getElementById('reservationDate').value);
@@ -41,24 +35,22 @@ function sendReservationPostRequest() {
     fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded', // Sending data as form URL encoded
+            'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: formData.toString(), // Convert form data to URL-encoded string
+        body: formData.toString(),
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json(); // Assuming the servlet returns a JSON response
+        return response.json();
     })
     .then(result => {
         console.log('Success:', result);
-        // Handle the success response (e.g., display a message or redirect)
         alert('Reservation Successful!');
     })
     .catch(error => {
         console.error('Error:', error);
-        // Handle the error
         alert('Reservation Failed!');
     });
 }

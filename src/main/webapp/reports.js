@@ -1,4 +1,4 @@
-// Add a new row to the table
+
 function addRow(tableId) {
     const table = document.getElementById(tableId).getElementsByTagName('tbody')[0];
     const newRow = table.insertRow();
@@ -21,10 +21,31 @@ function addRow(tableId) {
                 <button onclick="saveRow(this)">Save</button>
                 <button onclick="deleteRow(this)">Delete</button>
             </td>`;
+    } else if (tableId === 'customer-reg-table') {
+        newRow.innerHTML = `
+            <td><input type="text" placeholder="Customer ID"></td>
+            <td><input type="text" placeholder="Name"></td>
+            <td><input type="email" placeholder="Email"></td>
+            <td><input type="password" placeholder="Password"></td>
+            <td>
+                <button onclick="saveRow(this)">Save</button>
+                <button onclick="deleteRow(this)">Delete</button>
+            </td>`;
+    } else if (tableId === 'staff-reg-table') {
+        newRow.innerHTML = `
+            <td><input type="text" placeholder="Staff ID"></td>
+            <td><input type="text" placeholder="Name"></td>
+            <td><input type="text" placeholder="Role"></td>
+            <td><input type="email" placeholder="Email"></td>
+            <td><input type="password" placeholder="Password"></td>
+            <td>
+                <button onclick="saveRow(this)">Save</button>
+                <button onclick="deleteRow(this)">Delete</button>
+            </td>`;
     }
 }
 
-// Save the data from the input fields to the table cells
+
 function saveRow(button) {
     const row = button.parentNode.parentNode;
     const inputs = row.querySelectorAll('input');
@@ -41,14 +62,17 @@ function saveRow(button) {
         <button onclick="deleteRow(this)">Delete</button>`;
 }
 
-// Edit an existing row
 function editRow(button) {
     const row = button.parentNode.parentNode;
     const cells = row.getElementsByTagName('td');
 
     for (let i = 0; i < cells.length - 1; i++) {
         const value = cells[i].innerHTML;
-        cells[i].innerHTML = `<input type="text" value="${value}">`;
+        if (i === 3 || i === 4) {
+            cells[i].innerHTML = `<input type="password" value="${value}">`;
+        } else {
+            cells[i].innerHTML = `<input type="text" value="${value}">`;
+        }
     }
 
     const actionCell = cells[cells.length - 1];
@@ -56,7 +80,6 @@ function editRow(button) {
                             <button onclick="deleteRow(this)">Delete</button>`;
 }
 
-// Delete a row from the table
 function deleteRow(button) {
     const row = button.parentNode.parentNode;
     row.parentNode.removeChild(row);

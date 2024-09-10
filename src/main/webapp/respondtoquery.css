@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -129,7 +129,6 @@ form button[type="button"]:hover {
     background: linear-gradient(to right, #DCE35B, #45B649);
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
     header h1 {
         font-size: 28px;

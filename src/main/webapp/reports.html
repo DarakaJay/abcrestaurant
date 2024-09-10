@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Restaurant - Sales Reports</title>
+    <title>ABC Restaurant - Reports</title>
     <link rel="stylesheet" href="reports.css">
 </head>
 
 <body>
     <header>
         <h1>ABC Restaurant</h1>
-        <h2>Sales Reports</h2>
-    <nav>
-        <ul>
-            <li><a href="admindash.html">Manage Reservations</a></li>
-            <li><a href="respondtoquery.html">Respond to Queries</a></li>
-            <li><a href="managepayment.html">Manage Payments</a></li>
-            <li><a href="admingallery.html">Manage Gallery</a></li>
-            <li><a href="reports.html">Generate Reports</a></li>
-            <li><a href="staffregadmin.html">Staff Registration</a></li>
-            <li><a href="home.html">Logout</a></li>
-        </ul>
-    </nav>
+        <h2>Reports Management</h2>
+        <nav>
+            <ul>
+                <li><a href="admindash.html">Manage Reservations</a></li>
+                <li><a href="respondtoquery.html">Respond to Queries</a></li>
+                <li><a href="managepayment.html">Manage Payments</a></li>
+                <li><a href="admingallery.html">Manage Gallery</a></li>
+                <li><a href="reports.html">Generate Reports</a></li>
+                <li><a href="staffregadmin.html">Staff Registration</a></li>
+                <li><a href="home.html">Logout</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -40,7 +40,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Example row -->
                     <tr>
                         <td>2024-08-21</td>
                         <td>Burger</td>
@@ -67,10 +66,67 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Example row -->
                     <tr>
                         <td>August 2024</td>
                         <td>$15,000</td>
+                        <td>
+                            <button onclick="editRow(this)">Edit</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="customer-registration">
+            <h2>Customer Registration Report</h2>
+            <button onclick="addRow('customer-reg-table')">Add Record</button><br><br>
+            <table id="customer-reg-table">
+                <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C001</td>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>password123</td>
+                        <td>
+                            <button onclick="editRow(this)">Edit</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="staff-registration">
+            <h2>Staff Registration Report</h2>
+            <button onclick="addRow('staff-reg-table')">Add Record</button><br><br>
+            <table id="staff-reg-table">
+                <thead>
+                    <tr>
+                        <th>Staff ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S001</td>
+                        <td>Jane Smith</td>
+                        <td>Admin</td>
+                        <td>jane@example.com</td>
+                        <td>adminpass</td>
                         <td>
                             <button onclick="editRow(this)">Edit</button>
                             <button onclick="deleteRow(this)">Delete</button>

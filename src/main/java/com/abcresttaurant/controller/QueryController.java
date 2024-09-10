@@ -1,10 +1,8 @@
 package com.abcresttaurant.controller;
 
 import java.io.IOException;
-
 import java.sql.SQLException;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,15 +42,15 @@ public class QueryController extends HttpServlet {
         try {
             List<Query> queryList = queryService.getAllQueries();
             request.setAttribute("queries", queryList);
-            request.getRequestDispatcher("WEB-INF/view/listQueries.jsp").forward(request, response);
+            request.getRequestDispatcher("/query.js").forward(request, response);
         } catch (SQLException e) {
             request.setAttribute("errorMessage", e.getMessage());
-            request.getRequestDispatcher("WEB-INF/view/error.jsp").forward(request, response);
+            request.getRequestDispatcher("/error.js").forward(request, response);
         }
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/view/addQuery.jsp").forward(request, response);
+        request.getRequestDispatcher("/query.js").forward(request, response);
     }
 
     private void addQuery(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

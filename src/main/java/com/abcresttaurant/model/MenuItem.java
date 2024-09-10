@@ -1,4 +1,4 @@
- package com.abcresttaurant.model;
+package com.abcresttaurant.model;
 
 public class MenuItem {
 	

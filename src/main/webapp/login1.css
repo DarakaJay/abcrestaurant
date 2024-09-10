@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -51,12 +51,12 @@ nav ul li a:hover {
     background: linear-gradient(to right, #DCE35B, #45B649);
     color: #fff;
 }
-/* Main Content */
+
 main {
     padding: 20px;
 }
 
-/* Login Form Styles */
+
 .container {
     max-width: 400px;
     margin: 0 auto;
@@ -127,7 +127,7 @@ form button[type="button"] a:hover {
    background: linear-gradient(to right, #DCE35B, #45B649);
 }
 
-/* Message Style */
+
 #message {
     color: red;
     font-size: 16px;
@@ -135,7 +135,7 @@ form button[type="button"] a:hover {
     margin-top: 10px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 28px;

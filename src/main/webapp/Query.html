@@ -31,7 +31,7 @@
     </header>
     
     <main>
-        <!-- Submit Query Section -->
+
         <section id="query">
             <h2>Submit a Query</h2>
             <form id="query-form" method="post" action="submitQuery">
@@ -44,7 +44,7 @@
                 <label for="queryContent">Message</label>
                 <textarea id="queryContent" name="queryContent" placeholder="Your query" required></textarea>
                 
-                <!-- Hidden input for query date -->
+ 
                 <input type="hidden" id="queryDate" name="queryDate">
                 
                 <button type="submit">Submit Query</button>
@@ -54,9 +54,9 @@
     </main>
 
     <script>
-        // JavaScript to set the current date as query date
+
         document.getElementById('query-form').addEventListener('submit', function() {
-            const queryDate = new Date().toISOString().slice(0, 19).replace('T', ' '); // Format: YYYY-MM-DD HH:MM:SS
+            const queryDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
             document.getElementById('queryDate').value = queryDate;
         });
     </script>

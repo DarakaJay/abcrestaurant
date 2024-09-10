@@ -1,14 +1,11 @@
 package com.abcresttaurant.controller;
 
 import java.io.IOException;
-
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.abcresttaurant.model.Staff;
 import com.abcresttaurant.service.StaffService;
 
@@ -41,15 +38,15 @@ public class StaffController extends HttpServlet {
     private void listStaff(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             request.setAttribute("staffList", staffService.getAllStaff());
-            request.getRequestDispatcher("WEB-INF/view/listStaff.jsp").forward(request, response);
+            request.getRequestDispatcher("/staffreg.js").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("errorMessage", e.getMessage());
-            request.getRequestDispatcher("WEB-INF/view/error.jsp").forward(request, response);
+            request.getRequestDispatcher("/staffreg.js").forward(request, response);
         }
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/view/addStaff.jsp").forward(request, response);
+        request.getRequestDispatcher("/staffreg.js").forward(request, response);
     }
 
     private void addStaff(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
